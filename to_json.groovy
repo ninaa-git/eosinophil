@@ -21,6 +21,9 @@ for (entry in project.getImageList()) {
     def gson = GsonTools.getInstance(prettyPrint)
     def writer = new FileWriter("a.json"); //or FileWriter(filePath) on Windows
     gson.toJson(annotations,writer)
+
+    exportObjectsToGeoJson(annotations, "a.geojson") // ou exportObjectsToGeoJson(annotations, OUTPUT_DIR, "a.geojson")
+    
     writer.flush()
     print("done")
 }
