@@ -6,10 +6,12 @@ for (entry in project.getImageList()) {
     def imageData = entry.readImageData()
     def hierarchy = entry.readHierarchy()
     def annotations = hierarchy.getAnnotationObjects()
+    //def name = entry.getImageName()
     print(entry)
     print(imageData)
     print(hierarchy)
     print(annotations)
+
 
 
     def OUTPUT_DIR = 'Your Directory' 
