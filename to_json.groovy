@@ -20,13 +20,9 @@ for (entry in project.getImageList()) {
     def filePath = buildFilePath(OUTPUT_DIR, name.toString())
     print(filePath)
     mkdirs(filePath)
-    boolean prettyPrint = true
-    def gson = GsonTools.getInstance(prettyPrint)
-    def writer = new FileWriter(filePath + ".json"); //or FileWriter(filePath) on Windows
-    gson.toJson(annotations,writer)
 
-    exportObjectsToGeoJson(annotations, filePath+ ".geojson") // ou exportObjectsToGeoJson(annotations, OUTPUT_DIR, "a.geojson")
+    exportObjectsToGeoJson(annotations, filePath+ ".geojson", "FEATURE_COLLECTION") // ou exportObjectsToGeoJson(annotations, OUTPUT_DIR, "a.geojson")
     
-    writer.flush()
+
     print("done")
 }
