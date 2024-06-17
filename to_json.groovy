@@ -19,7 +19,7 @@ for (entry in project.getImageList()) {
     print(name)
     def filePath = buildFilePath(OUTPUT_DIR, name.toString())
     print(filePath)
-    mkdirs(filePath)
+
 
     exportObjectsToGeoJson(annotations, filePath+ ".geojson", "FEATURE_COLLECTION") // ou exportObjectsToGeoJson(annotations, OUTPUT_DIR, "a.geojson")
     
